@@ -2,9 +2,7 @@ version: "2.0"
 
 services:
   sa-frontend:
-    build: 
-      context: ./sa-frontend
-    image: rinormaloku/sentiment-analysis-frontend:feedback
+    image: huuduc2107/sentiment-analysis-frontend:docker
     ports:
     - "8000:80"
 
