@@ -1,19 +1,104 @@
-## Kubernetes Volumes
+# MSA
 
-To demonstrate Kubernetes Volumes in this branch we added a new service the SA-Feedback. For newcomers to Kubernetes or that want to understand this Microservice application please read up in: [Learn kuberntes in under 3 hours: A detailed guide to Orchestrating Containers](https://medium.freecodecamp.org/learn-kubernetes-in-under-3-hours-a-detailed-guide-to-orchestrating-containers-114ff420e882)
+# Stack
 
-### The SA-Feedback service
+# Module
 
-Stores users feedback if the Sentiment Analysis was correct or not in a SQLite database. In a real app it would be used to train the Sentiment Analysis model, in our case we use it as an opportunity to showcase **Kubernetes Volumes**.
+- SSO
+- Ecommerce
 
-#### Setting up the service
+# Architect
 
-**Prerequisite:** install `dotnet core 2.1` 
+- SSO
+- Restful API
+- SAGA pattern
+- Event driven
+- API gateway
+- Automation test
+- Load test
 
-To run the app execute the command below (from the directory of sa-feedback)
+# Technology
 
-```
-$ dotnet run
-```
+- Kafka
+- ELK
+- MongDB
+- Redis
+- K8S
+- Istio
+- Envoy
+- Prometheus
+- Grafana
+- Helm
+- Jaeger
+- EKS
+- Docker
+- Terraform
+- Ansible
+- Rancher
+- Xray
 
-For additional technical information follow the README in [SA-Frontend directory](sa-feedback\README.md)
+# Kubernetes
+
+- pod
+  + label
+  + namespace
+  
+- replica
+  + number of pods
+  
+- deployment
+  + recreate
+  + rollingupdate
+  + rollout
+  + canary
+  
+- service
+  + clusterIP: internal
+  + nodeport: expose port
+  + load balancer
+  
+- volume
+  + emptydir: share data between container
+  + gitrepo: clone git to container
+  + hostpath: filesystem of node
+  + cloud storage: persistent data
+
+- persistent volume claim
+  
+- ingress:
+  + allow access to service
+  + domain for service cluster
+
+- configmap: env
+- secret: credential
+
+- job: run pod at one time
+- cronjob: schedule job
+- parallel job: work queue
+
+- scheduler
+  + assign pod to node
+  + node affinity: schedule to only subnet of nodes
+- stateful:
+  + contain volume
+  + one pod one storage
+
+- daemonset
+  + one pod one node
+  
+- role based access control: restrict access to resource
+- networking policy: like CORs
+
+# Docker
+- dangling image
+- volume remove
+- restart policy:
+  + never
+  + on failed
+  + alway restart
+  + unless stop
+- cmd, entrypoint, start
+- exit code
+- event
+- privileged
+
