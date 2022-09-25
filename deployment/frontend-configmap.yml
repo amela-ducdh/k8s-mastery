@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: sa-config-frontend
+data:
+    api.server: http://sa-web-app
+    feedback.server: http://sa-feedback
