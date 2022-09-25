@@ -1,10 +1,13 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sa-frontend
 spec:
   replicas: 1
   minReadySeconds: 15
+  selector:
+    matchLabels:
+      app: sa-frontend
   strategy:
     type: RollingUpdate
     rollingUpdate: 
@@ -16,8 +19,19 @@ spec:
         app: sa-frontend
     spec:
       containers:
-      - image: rinormaloku/sentiment-analysis-frontend:feedback
+      - image: huuduc2107/sentiment-analysis-frontend
         imagePullPolicy: Always
         name: sa-frontend
         ports:
           - containerPort: 80
+        env:
+          - name: API_SERVER
+            valueFrom:
+              configMapKeyRef:
+                name: sa-config-frontend
+                key: api.server
+          - name: FEEDBACK_SERVER
+            valueFrom:
+              configMapKeyRef:
+                name: sa-config-frontend
+                key: api.feedback

@@ -8,7 +8,7 @@
 ` $ docker run -d -p 80:80 huuduc2107/sentiment-analysis-frontend `
 
 ## Building the container
-` $ docker build -f Dockerfile -t huuduc2107/sentiment-analysis-frontend:docker . `
+` $ docker build -f Dockerfile -t huuduc2107/sentiment-analysis-frontend . `
 
 ## Pushing the container
-` $ docker push huuduc2107/sentiment-analysis-frontend:docker `
+` $ docker push huuduc2107/sentiment-analysis-frontend `
