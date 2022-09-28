@@ -19,7 +19,7 @@ spec:
         app: sa-frontend
     spec:
       containers:
-      - image: huuduc2107/sentiment-analysis-frontend
+      - image: huuduc2107/sentiment-analysis-frontend:2
         imagePullPolicy: Always
         name: sa-frontend
         ports:
@@ -34,4 +34,4 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: sa-config-frontend
-                key: api.feedback
+                key: feedback.server

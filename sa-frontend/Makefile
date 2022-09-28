@@ -1,4 +1,4 @@
 image:
-	docker build -f Dockerfile -t huuduc2107/sentiment-analysis-frontend:docker .
+	docker build -f Dockerfile -t huuduc2107/sentiment-analysis-frontend:2 .
 push:
-	docker push huuduc2107/sentiment-analysis-frontend:docker		
+	docker push huuduc2107/sentiment-analysis-frontend:2

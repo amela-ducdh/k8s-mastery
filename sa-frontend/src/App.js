@@ -20,7 +20,7 @@ class App extends Component {
     };
 
     analyzeSentence() {
-        fetch(`${process.env.API_SERVER}/sentiment`, {
+        fetch(`http://192.168.49.2:32659/sentiment`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,6 +48,7 @@ class App extends Component {
                     <Paper zDepth={1} className="content">
                         <h2>Sentiment Analyser</h2>
                         <TextField ref={ref => this.textField = ref} onKeyUp={this.onEnterPress.bind(this)}
+                                   value="hello"
                                    hintText="Type your sentence."/>
                         <RaisedButton  label="Send" style={style} onClick={this.analyzeSentence.bind(this)}/>
                         {polarityComponent}

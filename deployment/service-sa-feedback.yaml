@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: sa-feedback
 spec:
+  type: LoadBalancer
   ports:
   - port: 80
     protocol: TCP
