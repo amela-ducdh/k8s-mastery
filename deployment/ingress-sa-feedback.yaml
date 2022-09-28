@@ -8,9 +8,10 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: feedback.local
+    http:
       paths:
-      - path: /feedback
+      - path: /
         pathType: Prefix
         backend:
           service:

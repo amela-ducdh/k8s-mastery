@@ -37,7 +37,7 @@ class Feedback extends Component {
     };
 
     submitFeedback = isCorrect => {
-        fetch(`${process.env.FEEDBACK_SERVER}/feedback`, {
+        fetch(`http://feedback.local/feedback`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
